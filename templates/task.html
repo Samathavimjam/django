@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="3px">
+        <tr>
+            <th>taskname</th>
+            <th>taskcompleted</th>
+         </tr>
+
+         {% for task in TTO %}
+         <tr>
+            <td>{{task.taskname}}</td>
+
+            <td>{{task.taskcompleted}}</td>
+            <td><a href="{% url 'delete' task.id %}"onclick="return confirm('are you sure you wan tto delete')">delete data</a></td>
+         </tr>
+         {% endfor %}
+
+    </table>
+</body>
+</html>
